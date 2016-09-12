@@ -322,6 +322,13 @@ margin-left:0px;
     pointer-events:all;
 	text-align: center;
 }
+#emaildiv{
+	z-index: 20; 
+	position: fixed; 
+	top: 500px; 
+	display: none;
+	width: 100%;
+}
 .bounce {
   -webkit-animation:bounce 2s alternate infinite;
   animation:bounce 2s alternate infinite;
