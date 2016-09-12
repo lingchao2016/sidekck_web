@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<head>
+	<title>SideKck</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<meta name="keywords" content = "SideKck,gymbuddies">
+	<meta name="description" content = "Looking for your gym buddies">
+	<meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link href="css/sidekck.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Full Page Image Background Carousel Header -->
+<div id="emaildiv" class="row" style="z-index: 20; position: fixed; top: 500px;">
+<form id="subscribe" method="post" action="php/subscribe.php" name="subscribe">
+ <div class="col-lg-2"></div>
+				<div class="col-lg-8">
+				<div class="input-group" >
+      				<input type="text" class="form-control_sidekck" id="semail" name="YourEmail" placeholder="Enter an email here">
+      				<span class="input-group-btn">
+       					<button class="btn btn-default" type="button" id="ssubmit" name="subscribe" >Notify Me</button>
+     				</span>
+     			 </div>
+     			 </div>
+     			 <div class="col-lg-2"></div>
+</form>     			 
+</div> 
+<div id="fullpage">
+	<div class="section " id="section0">
+		<header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">SideKck</h1>
+                <h2 class="green">Find The Right Gym Buddy When You Need To</h2>
+                <p id="emailbanner">Get notified when we launch, and...<br>
+                Start to connect with other like-minded workout lovers around you!</p>
+               
+    			
+            	</div>
+        </div>
+  		</header>
+	</div>
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1" style="position: relative;">
+			<div class="row fullscreen">
+	    	<section>
+			<div class="row"> 
+				<div class="col-lg-3 col-md-2 col-sm-1"></div>
+           		<div class="col-lg-6 col-md-8 col-sm-10">
+				
+					<h2 class="green"><br>Post & Find before Workout</h2>
+					<h2 class="green">The New, Easy Way to Get a Gym Buddy/h2>
+					<p class="green">Get notified when we launch, and...<br>
+                Start to connect with other like-minded workout lovers around you!</p>
+				
+				</div>
+			 	<div class="col-lg-3 col-md-2 col-sm-1"></div>
+			</div>
+			<div>
+			</section>
+			</div>
+			<div class="row fullscreen" style="z-index: 10;">
+				<div class="col-lg-6 left-resize" >&nbsp;</div>
+				<div class="col-lg-6 right-resize">&nbsp;</div>
+			</div>
+		</div>
+
+	    <div class="slide" id="slide2" style="position: relative;">
+			<div class="row fullscreen">
+	    	<section>
+			<div class="row"> 
+				<div class="col-lg-3 col-md-2 col-sm-1"></div>
+           		<div class="col-lg-6 col-md-8 col-sm-10">
+				
+					<h2 class="green"><br>Post & Find before Workout</h2>
+					<h2 class="green">The New, Easy Way to Get a Gym Buddy/h2>
+					<p class="green">Get notified when we launch, and...<br>
+                Start to connect with other like-minded workout lovers around you!</p>
+				
+				</div>
+			 	<div class="col-lg-3 col-md-2 col-sm-1"></div>
+			</div>
+			<div>
+			</section>
+			</div>
+			<div class="row fullscreen" style="z-index: 10;">
+				<div class="col-lg-6 left-resize" >&nbsp;</div>
+				<div class="col-lg-6 right-resize">&nbsp;</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $(document).ready(function() { 
+    	var init = true;
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage'],
+				sectionsColor: ['#3A2B51', '#F5F3F7'],
+				scrollBar: true,
+				slidesNavigation: true,
+				controlArrows: false,
+				afterLoad: function(anchorLink, index){
+           		var loadedSection = $(this);
+
+            	//using index
+            	if(index == 2){
+                	$('#emaildiv').animate({ top: '20'}, 1000);
+            	}
+            	if(index == 1 && !init){
+                	$('#emaildiv').animate({ top: $("#emailbanner").offset().top+70}, 1000);
+            	}
+       		 	}
+			});
+		init = false;
+    	$('#emaildiv').css({ top: ($("#emailbanner").offset().top+70)+"px"});
+		$(document).on('click', '.right-resize', function(){
+  			$.fn.fullpage.moveSlideRight();
+		});	
+		$(document).on('click', '.left-resize', function(){
+  			$.fn.fullpage.moveSlideLeft();
+		});
+		
+	});
+    </script>
+
+</body>
+
+</html>
