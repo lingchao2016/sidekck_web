@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="97px" height="97px" viewBox="0 0 97 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>check</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="check" fill="#00D7A1">
+            <path d="M92,48.5 C92,24.4756134 72.5243866,5 48.5,5 C24.4756134,5 5,24.4756134 5,48.5 C5,72.5243866 24.4756134,92 48.5,92 C72.5243866,92 92,72.5243866 92,48.5 Z M0,48.5 C0,21.7141896 21.7141896,0 48.5,0 C75.2858104,0 97,21.7141896 97,48.5 C97,75.2858104 75.2858104,97 48.5,97 C21.7141896,97 0,75.2858104 0,48.5 Z" id="circle"></path>
+            <polygon id="Check" points="37.8423372 62.9749282 41.3328379 66.3781664 44.8233385 62.9749282 69.815287 38.6077785 62.8342856 31.4477771 41.3328382 52.5996097 33.8893611 45.1542988 26.9083597 52.3143002"></polygon>
+        </g>
+    </g>
+</svg>

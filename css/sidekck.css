@@ -22,11 +22,11 @@ body {
   left: 0;
 }
 .left-resize{
-	cursor: w-resize; 
+	cursor: url('../images/left_cursor.png'), default;
 	height: 100%;
 }
 .right-resize{
-	cursor: e-resize; 
+	cursor: url('../images/right_cursor.png'), default;
 	height: 100%;
 }
 .carousel-inner {
@@ -298,4 +298,59 @@ margin-left:0px;
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events:all;
+	text-align: center;
+}
+.bounce {
+  -webkit-animation:bounce 2s alternate infinite;
+  animation:bounce 2s alternate infinite;
+}
+@keyframes bounce {
+  0% { 
+    -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+  }
+  50% { 
+    -webkit-transform:translate(0px,20px);
+    transform:translate(0px,20px);
+  }
+  100%{ 
+     -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+  }
+}
+@-webkit-keyframes bounce {
+  0% { 
+    -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+  }
+  50% { 
+   -webkit-transform:translate(0px,20px);
+    transform:translate(0px,20px);
+  }
+  100%{ 
+     -webkit-transform:translate(0,0);
+    transform:translate(0,0);
+  }
 }
