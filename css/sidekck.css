@@ -45,8 +45,11 @@ body {
     -o-background-size: cover;
 }
 
-footer {
-    margin: 50px 0;
+.footer {
+    color: #FFF;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
 }
 
 header{
@@ -96,15 +99,18 @@ h6 {
 .green{
 	color: #00D7A1;
 }
+.purple{
+	color: #3A2B51;
+}
+.grey{
+	color: #4D4D4D;
+}
 p {
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 
-section {
-  padding: 50px 0;
-}
 aside {
   padding: 50px 0;
 }
@@ -142,7 +148,7 @@ header .header-content .header-content-inner h2 {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 24px;
   padding:0px;
 }
 header .header-content .header-content-inner hr {
@@ -151,8 +157,69 @@ header .header-content .header-content-inner hr {
 header .header-content .header-content-inner p {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 50px;
+}
+.purple.second{
+	font-size: 24px;
+}
+.grey.second{
+	font-size: 14px;
+}
+
+#firstslide_image_div{
+	margin-top:auto;
+}
+#firstslide_text{
+  	margin-top: auto; 
+  	margin-left: auto;
+  }
+#secondslide_image_div{
+	margin-top:50px;
+}
+#secondslide_text{
+  	margin-top: auto; 
+  	margin-left: auto;
+  }
+#thridslide_image_div{
+	margin-top:auto;
+	margin-left: auto;
+}
+#thridslide_text{
+  	margin-top: auto; 
+  	text-align: left;
+  }
+.toplocation{
+	top: 80px;
+}
+#phone_img{
+	width: 40%;
+	max-width: 210px;
+}
+#firstslide_image{
+	width: 100%;
+	height: auto;
+}
+#secondslide_image{
+	width: 100%;
+	height: auto;
+}
+#thridslide_image{
+	width: 100%;
+	height: auto;
+}
+.secondslide_text_left{
+	float: auto; 
+	width: 100%; 
+	text-align: left; 
+	padding: 0px;
+}
+
+.secondslide_text_right{
+	float: auto; 
+	width: 100%; 
+	text-align: left; 
+	padding: 0px;
 }
 @media (min-width: 768px) {
   header {
@@ -177,13 +244,73 @@ header .header-content .header-content-inner p {
   }
   header .header-content .header-content-inner h2 {
     padding-bottom: 20px;
+    font-size: 36px;
   }
   header .header-content .header-content-inner p {
-    font-size: 18px;
+    font-size: 20px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
+  .purple.second{
+	font-size: 32px;
+  }
+  .grey.second{
+	font-size: 20px;
+  }
+  #firstslide_image_div{
+	margin-top: -500px;
+  }
+  #firstslide_text{
+  	margin-top: 300px; 
+  	margin-left: 200px;
+  }
+  #secondslide_image_div{
+	margin-top:-470px;
+	text-align: center;
+}
+#secondslide_text{
+  	margin-top: 370px; 
+  }
+#thridslide_image_div{
+	margin-top: -150px;
+	margin-left: 300px;
+}
+#thridslide_text{
+  	text-align: right;
+
+}
+  .toplocation{
+	top: 100px;
+  }
+  #phone_img{
+  	width: 210px;
+  }
+  #firstslide_image{
+	width: 586px;
+	height: 355px;
+  }
+  #secondslide_image{
+	width: 682px;
+	height: 357px;
+  }
+  #thridslide_image{
+	width: 507px;
+	height: 359px;
+}
+  .secondslide_text_left{
+	float: left; 
+	width: 50%; 
+	text-align: right; 
+	padding: 5px;
+}
+
+.secondslide_text_right{
+	float: left; 
+	width: 50%; 
+	text-align: left; 
+	padding: 5px;
+}
 }
 
 section .section-content {
@@ -219,6 +346,9 @@ section .section-content .section-content-inner p {
   section {
     min-height: 100%;
   }
+  section {
+  	padding: 50px 0;
+ }
   section .section-content {
     position: absolute;
     top: 50%;
