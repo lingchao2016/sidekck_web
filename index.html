@@ -393,7 +393,7 @@
     	var init = true;
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', 'thirdPage','footer'],
-				sectionsColor: ['#3A2B51', '#F5F3F7', '#F5F3F7', '#CDCDCD'],
+				sectionsColor: ['#3A2B51', '#F5F3F7', '#F5F3F7', '#DBD9DC'],
 				scrollBar: true,
 				slidesNavigation: true,
 				controlArrows: false,
@@ -421,7 +421,7 @@
        		 	},
 				afterLoad: function(anchorLink, index){ 
 					if(init){
-						if(window.location.href.indexOf("secondPage")>-1 || window.location.href.indexOf("thirdPage")>-1){
+						if(window.location.href.indexOf("secondPage")>-1 || window.location.href.indexOf("thirdPage")>-1 || window.location.href.indexOf("footer")>-1){
 							$('#emaildiv').animate({ top: '20'}, 300);
 						}else{
 							$('#emaildiv').animate({ top: $("#emailbanner").offset().top+$("#emailbanner").height()+20}, 300);
@@ -432,7 +432,7 @@
 					
 				},
 				afterResize: function(){
-					if(window.location.href.indexOf("secondPage")>-1 || window.location.href.indexOf("thirdPage")>-1){
+					if(window.location.href.indexOf("secondPage")>-1 || window.location.href.indexOf("thirdPage")>-1 || window.location.href.indexOf("footer")>-1){
 						$('#emaildiv').animate({ top: '20'}, 300);
 					}else{
 						$('#emaildiv').animate({ top: $("#emailbanner").offset().top+$("#emailbanner").height()+20}, 300);
@@ -443,12 +443,24 @@
 		
     	//$('#emaildiv').css({ top: ($("#emailbanner").offset().top+70)+"px"});
 		$(document).on('click', '.right-resize', function(){
+			if(window.location.href.indexOf("footer")>-1 ){
+				$.fn.fullpage.moveSectionUp();
+			}
   			$.fn.fullpage.moveSlideRight();
 		});	
 		$(document).on('click', '.left-resize', function(){
+			if(window.location.href.indexOf("footer")>-1 ){
+				$.fn.fullpage.moveSectionUp();
+			}
   			$.fn.fullpage.moveSlideLeft();
 		});
-		//$('#myModal').modal('show');
+		$('input[type="text"]').blur(function() {
+  setTimeout(function() {
+    if (!$(document.activeElement).is('input[type="text"]')) {
+      $(window).scrollTop(0,0);
+    }
+  }, 0);
+});
 	});
 	function subscribeEmail(){ 
 		var options = {
