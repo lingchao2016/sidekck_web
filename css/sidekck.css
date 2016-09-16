@@ -157,7 +157,7 @@ header .header-content {
 }
 header .header-content-logo{
 	position: absolute;
-	top: 20%;
+	bottom: 80%;
 	text-align:center;
 	width: 100%;
 }
@@ -404,7 +404,7 @@ margin-left:0px;
 	}
 	header .header-content-logo{
 		position: absolute;
-		top: 30%;
+		bottom: 70%;
 		text-align:center;
 		width: 100%;
 	}

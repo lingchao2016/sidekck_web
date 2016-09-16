@@ -113,10 +113,12 @@
 					<div id="firstslide_image_div" class="col-lg-8 col-md-8 col-sm-12">
 						<svg id="firstslide_image"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 							 y="0px" viewBox="0 0 523.6 354.5" enable-background="new 0 0 523.6 354.5" xml:space="preserve">
-						<circle id="circle1" fill="#4BBC97" cx="229.6" cy="81.2" r="16"/>
-						<circle id="circle2" opacity="0.42" fill="#4BBC97" cx="228.8" cy="81.9" r="28.2"/>
-						<circle id="circle3" opacity="0.31" fill="#4BBC97" cx="228.8" cy="81.9" r="43.5"/>
-						<circle id="circle4" opacity="0.3" fill="#4BBC97" cx="229.6" cy="82.2" r="82.2"/>
+						<g id="Signal" >
+							<circle id="circle1" fill="#4BBC97" cx="229.6" cy="81.2" r="16"/>
+							<circle id="circle2" opacity="0.42" fill="#4BBC97" cx="228.8" cy="81.9" r="28.2"/>
+							<circle id="circle3" opacity="0.31" fill="#4BBC97" cx="228.8" cy="81.9" r="43.5"/>
+							<circle id="circle4" opacity="0.3" fill="#4BBC97" cx="229.6" cy="82.2" r="82.2"/>
+						</g>
 						<line id="line" fill="none" stroke="#4DBC96" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="245.5" y1="81.2" x2="399.8" y2="81.2"/>
 						<g id="Time">
 							<circle fill="#FFFFFF" stroke="#4BBC97" stroke-width="2" stroke-miterlimit="10" cx="283.3" cy="80.4" r="17.2"/>
@@ -845,8 +847,18 @@
 			$('#fullpage').fullpage({
 				anchors: ['firstPage', 'secondPage', 'thirdPage'],
 				sectionsColor: ['#3A2B51', '#F5F3F7', '#F5F3F7'],
-				scrollBar: true,
-				slidesNavigation: true,
+                css3: true,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                scrollBar: true,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                scrollOverflow: true,
+                touchSensitivity: 1,
+                normalScrollElementTouchThreshold: 5,
+                normalScrollElements: null,
+                responsiveWidth: 991,
 				controlArrows: false,
 				onLeave: function(index, nextIndex, direction){
            		var leavingSection  = $(this);
@@ -858,13 +870,24 @@
 					if(init){
 						$("#loading").css("display", "none")
 						$(".header-content").animate({ opacity: 1, top: $(".header-content-logo").offset().top+$(".header-content-logo").height()*1.2}, 'slow');
+						$('#emaildiv2').animate({ top: $("#thridslide_text").offset().top - $("#slide4").offset().top +$("#thridslide_text").height(), width: $("#thridslide_text").width(), left: $("#thridslide_text").offset().left -$("#slide4").offset().left + 20}, 300);
 						//$.fn.fullpage.setResponsive(true);
 						init = false;	
 					} 
-					$('#emaildiv2').animate({ top: $("#thridslide_text").offset().top - $("#slide4").offset().top +$("#thridslide_text").height(), width: $("#thridslide_text").width(), left: $("#thridslide_text").offset().left -$("#slide4").offset().left + 20}, 300);
+					
 				},
-				afterResize: function(){
-				
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+						var mc = $("#Signal")
+						var x= 0
+						var y =0
+						var posX =mc[0]._targets[0]._gsTransform.x.toFixed(2)  
+						var posY = mc[0].getBoundingClientRect().top
+						var itemW = mc[0].getBoundingClientRect().width
+						var itemH = mc[0].getBoundingClientRect().height
+						console.log(posX)
+						console.log(posY)
+						var scale = 586/$("#firstslide_image").width();
+						TweenMax.fromTo(mc,1,{scale:0,x:posX ,y:posY}, {scale:1,x:posX - mc.width/2 ,y:posY - mc.height/2}).duration(2.5);
 				}
 
 			});
@@ -898,6 +921,10 @@
 				$("#ssubmit_btn_2").click();
 			}
 		});
+		if($( window ).width() < 768){
+			$('input').focus(function() { $.fn.fullpage.setAutoScrolling(false); })
+			$('input').blur(function() { $.fn.fullpage.setAutoScrolling(true); })	
+		}
 		//$('#myModal').modal('show');
 		/*var mc = $("#Group-9")
 		var x= 147
@@ -923,7 +950,6 @@
 		mc = $("#Stroke-27_slide2")
 		TweenMax.fromTo(mc,1,{rotation: 20},
 		{rotation: -20, repeat: -1,yoyo: true}).duration(2.5);*/
-
 	});
 	function subscribeEmail1(){ 
 		var options = {
