@@ -157,7 +157,7 @@ header .header-content {
 }
 header .header-content-logo{
 	position: absolute;
-	top: 30%;
+	top: 20%;
 	text-align:center;
 	width: 100%;
 }
@@ -172,7 +172,7 @@ header .header-content .header-content-inner h2 {
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 24px;
   padding:0px;
 }
 header .header-content .header-content-inner hr {
@@ -182,7 +182,7 @@ header .header-content .header-content-inner p {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  margin-bottom: 50px;
+  font-family: 'Muli', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 .purple.second{
     font-family: 'Khand', 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
@@ -229,7 +229,7 @@ header .header-content .header-content-inner p {
   	text-align: left;
 }
 .toplocation{
-	top: 60px;
+	top: 40px;
 }
 #phone_img{
 	width: 40%;
@@ -273,24 +273,6 @@ body {
 margin-right:0px;
 margin-left:0px;
 }
-#semail{
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
-	font-size: 14px;
-	padding: 4px 8px;
-	border: 0px;
-	color: #333;
-}
-#ssubmit{
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	font-size: 14px;
-	background-color: #00D7A1;
-	padding: 4px 8px;
-	border: 0px;
-	color: #ffffff;
-}
-
 .form-control_sidekck {
     display: block;
     width: 100%;
@@ -309,7 +291,23 @@ margin-left:0px;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-
+.semail{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 14px;
+	padding: 4px 8px;
+	border: 0px;
+	color: #333;
+}
+.ssubmit{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-size: 14px;
+	background-color: #00D7A1;
+	padding: 4px 8px;
+	border: 0px;
+	color: #ffffff;
+}
 
 .vertical-alignment-helper {
     display:table;
@@ -332,12 +330,14 @@ margin-left:0px;
     pointer-events:all;
 	text-align: center;
 }
-#emaildiv{
-	z-index: 20; 
-	position: fixed; 
-	top: 80%; 
-	display: none;
+#emaildiv1{
 	width: 100%;
+}
+#emaildiv2{
+	width: 100%;
+	margin-left: -30px;
+	margin-top: 10px;
+	position: absolute;
 }
 .scroll_arrow{
 	bottom: 20px; 
@@ -399,7 +399,7 @@ margin-left:0px;
 	}
 	header .header-content {
 		position: absolute;
-		top:80%;
+		top:50%;
 		padding: 0 50px;
 	}
 	header .header-content-logo{
@@ -473,7 +473,7 @@ margin-left:0px;
 		text-align: right;
 	}
 	.toplocation{
-		top: 80px;
+		top: 60px;
 	}
 	#phone_img{
 		width: 210px;
@@ -506,7 +506,10 @@ margin-left:0px;
 		text-align: left; 
 		padding: 5px;
 	}
-
+	#emaildiv2{
+		margin-left: 0px;
+		margin-top: 0px;
+	}
 	.form-control_sidekck {
 		display: block;
 		width: 100%;
@@ -525,7 +528,7 @@ margin-left:0px;
 		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 	}
-	#semail{
+	.semail{
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	font-size: 20px;
@@ -533,7 +536,7 @@ margin-left:0px;
 	border: 0px;
 	color: #333;
 	}
-	#ssubmit{
+	.ssubmit{
 		border-top-right-radius: 10px;
 		border-bottom-right-radius: 10px;
 		font-size: 20px;
